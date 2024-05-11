@@ -4,11 +4,12 @@ axios.defaults.baseURL = "https://api.unsplash.com/";
 
 const key = "XhZXKPXkMqxluEJQ2QNjl1MILulOpG1aR_IS76t49jg";
 
-const fetchData = async () => {
-  console.log(1);
-  const { data } = await axios.get("photos", {
+const fetchData = async (searchValue) => {
+  const { data } = await axios.get("search/photos", {
     params: {
       client_id: key,
+      query: searchValue,
+      per_page: 12,
     },
   });
 

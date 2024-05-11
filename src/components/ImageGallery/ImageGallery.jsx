@@ -1,15 +1,13 @@
+import ImageCard from "./ImageCard";
+
 const ImageGallery = ({ images }) => {
-  if (images.length === 0) {
-    return null;
-  }
+  console.log(images);
 
   return (
     <ul>
       {images.map((image) => (
-        <li key={id}>
-          <div>
-            <img src={image.url} alt={image.alt} />
-          </div>
+        <li key={image.id}>
+          <ImageCard src={image.urls.small} alt={image.alt_description} />
         </li>
       ))}
     </ul>
