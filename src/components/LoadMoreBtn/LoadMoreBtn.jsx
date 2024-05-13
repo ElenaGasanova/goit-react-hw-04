@@ -1,7 +1,7 @@
-function LoadMoreBtn() {
+function LoadMoreBtn({ onClick }) {
   return (
     <>
-      <button>Load more</button>
+      <button onClick={onClick}>Load more</button>
     </>
   );
 }

@@ -1,9 +1,9 @@
 import s from "./ImageCard.module.css";
 
-const ImageCard = ({ src, alt }) => {
+const ImageCard = ({ regular, src, alt, openModal }) => {
   return (
     <div className={s.wrapper}>
-      <img src={src} alt={alt} />
+      <img onClick={() => openModal(regular, alt)} src={src} alt={alt} />
     </div>
   );
 };

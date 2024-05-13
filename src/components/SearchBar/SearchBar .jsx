@@ -1,19 +1,20 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const SearchBar = ({ onSubmit, fetchGallery }) => {
+const SearchBar = ({ onSubmit, savedSearchValue }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
 
     const searchValue = event.target.elements.search.value;
+    savedSearchValue.current = searchValue;
 
     if (!searchValue.trim()) {
       toast.error("This input field cannot be empty.");
       return;
     }
 
-    fetchGallery(searchValue);
+    onSubmit(searchValue);
 
     form.reset();
   };
